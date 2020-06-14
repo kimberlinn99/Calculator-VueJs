@@ -69,23 +69,19 @@ export default {
       switch(operator){
         case '+':
           this.current = previous + current
-          this.current = this.current.toString()
-          this.previous = '' 
+          this.setCurrentAndPrevious()
           break;
         case '-':
           this.current = previous - current
-          this.current = this.current.toString()
-          this.previous = '' 
+          this.setCurrentAndPrevious()
           break;
         case '÷':
           this.current = previous / current
-          this.current = this.current.toString()
-          this.previous = '' 
+          this.setCurrentAndPrevious()
           break;
         case 'x':
           this.current = previous * current
-          this.current = this.current.toString()
-          this.previous = '' 
+          this.setCurrentAndPrevious()
           break;
         default:
           this.previous = ''
@@ -97,6 +93,10 @@ export default {
       if(this.current.length > this.stringLength){
         this.current = this.current.substring(0,9)
       }
+    },
+    setCurrentAndPrevious(){
+      this.current = this.current.toString()
+      this.previous = '' 
     }
   }
 }
